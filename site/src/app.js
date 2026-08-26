@@ -15,6 +15,23 @@ function filterCapabilities() {
 
 [query, status, family].forEach(element => element?.addEventListener('input', filterCapabilities));
 
+const menuToggle = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('.nav-links');
+
+function closeMenu() {
+  menuToggle?.setAttribute('aria-expanded', 'false');
+  navigation?.classList.remove('open');
+}
+
+menuToggle?.addEventListener('click', () => {
+  const open = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.setAttribute('aria-expanded', String(!open));
+  navigation?.classList.toggle('open', !open);
+});
+navigation?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+window.matchMedia('(min-width: 701px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
+
 const contexts = {
   supplier: 'Toimittajan arviointi',
   credit: 'Luottopäätös',
