@@ -26,6 +26,8 @@ jobs:
         env:
           MCP_BASE_URL: https://vf-capability-tuasvqm3oa-lz.a.run.app
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site/dist
