@@ -1,0 +1,77 @@
+{
+  "notice": "Prototype / synthetic data. Not a real Valuatum assessment.",
+  "records": [
+    {
+      "company_id": "northstar-components-oy",
+      "rating": "A",
+      "riskLevel": "low",
+      "confidence": 0.86,
+      "drivers": [
+        "Profitable three-year operating history",
+        "Equity ratio remains solid",
+        "Debt increased moderately with investment"
+      ],
+      "creditLimit": 750000
+    },
+    {
+      "company_id": "aurora-analytics-oy",
+      "rating": "B",
+      "riskLevel": "moderate",
+      "confidence": 0.74,
+      "drivers": [
+        "Rapid revenue growth",
+        "Recently reached operating profitability",
+        "Cash buffer declined while debt increased"
+      ],
+      "creditLimit": 180000
+    },
+    {
+      "company_id": "granite-logistics-ab",
+      "rating": "C",
+      "riskLevel": "elevated",
+      "confidence": 0.82,
+      "drivers": [
+        "High leverage",
+        "Declining operating margin",
+        "Thin cash buffer"
+      ],
+      "creditLimit": 90000
+    },
+    {
+      "company_id": "harbor-foods-as",
+      "rating": "AA",
+      "riskLevel": "very low",
+      "confidence": 0.9,
+      "drivers": [
+        "Stable profitability",
+        "Strengthening equity",
+        "Declining debt"
+      ],
+      "creditLimit": 900000
+    },
+    {
+      "company_id": "ember-retail-aps",
+      "rating": "D",
+      "riskLevel": "high",
+      "confidence": 0.88,
+      "drivers": [
+        "Revenue decline",
+        "Operating loss",
+        "Weakening liquidity and equity"
+      ],
+      "creditLimit": 25000
+    },
+    {
+      "company_id": "polar-grid-plc",
+      "rating": "A",
+      "riskLevel": "low",
+      "confidence": 0.84,
+      "drivers": [
+        "Growing revenue and earnings",
+        "Healthy equity base",
+        "Manageable leverage"
+      ],
+      "creditLimit": 2200000
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "notice": "Prototype / synthetic data. Not a real Valuatum assessment.",
+  "records": [
+    {
+      "company_id": "northstar-components-oy",
+      "low": 10500000,
+      "midpoint": 12100000,
+      "high": 13800000,
+      "currency": "EUR",
+      "drivers": [
+        "Stable operating margin",
+        "Moderate growth",
+        "Capital intensity"
+      ],
+      "assumptions": [
+        "Illustrative 6.5x–8.0x operating-profit range",
+        "No control premium"
+      ]
+    },
+    {
+      "company_id": "aurora-analytics-oy",
+      "low": 7200000,
+      "midpoint": 9300000,
+      "high": 12100000,
+      "currency": "EUR",
+      "drivers": [
+        "High growth",
+        "Recurring-revenue potential",
+        "Limited profitability history"
+      ],
+      "assumptions": [
+        "Illustrative growth-company revenue multiple",
+        "Execution discount applied"
+      ]
+    },
+    {
+      "company_id": "granite-logistics-ab",
+      "low": 4200000,
+      "midpoint": 5100000,
+      "high": 6200000,
+      "currency": "EUR",
+      "drivers": [
+        "Large asset base",
+        "Margin pressure",
+        "High net debt"
+      ],
+      "assumptions": [
+        "Illustrative asset and earnings blend",
+        "Debt deducted from enterprise value"
+      ]
+    },
+    {
+      "company_id": "harbor-foods-as",
+      "low": 8500000,
+      "midpoint": 9400000,
+      "high": 10400000,
+      "currency": "EUR",
+      "drivers": [
+        "Stable cash generation",
+        "Low leverage",
+        "Mature growth profile"
+      ],
+      "assumptions": [
+        "Illustrative mature-company earnings multiple"
+      ]
+    },
+    {
+      "company_id": "ember-retail-aps",
+      "low": 900000,
+      "midpoint": 1500000,
+      "high": 2300000,
+      "currency": "EUR",
+      "drivers": [
+        "Turnaround uncertainty",
+        "Brand and store network",
+        "Negative recent earnings"
+      ],
+      "assumptions": [
+        "Illustrative distressed range",
+        "No restructuring funding assumed"
+      ]
+    },
+    {
+      "company_id": "polar-grid-plc",
+      "low": 132000000,
+      "midpoint": 154000000,
+      "high": 181000000,
+      "currency": "EUR",
+      "drivers": [
+        "International growth",
+        "Margin expansion",
+        "Execution and market-cycle risk"
+      ],
+      "assumptions": [
+        "Illustrative DCF and peer-multiple blend",
+        "Synthetic share count"
+      ]
+    }
+  ]
+}

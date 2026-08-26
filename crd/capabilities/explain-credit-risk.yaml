@@ -1,0 +1,134 @@
+{
+  "id": "explain-credit-risk",
+  "name": "Explain Credit Risk",
+  "status": "observed",
+  "confidence": "high",
+  "definition": "Explain the principal evidence and drivers behind a company credit-risk conclusion.",
+  "purpose": {
+    "user_problem": "Make a credit-risk conclusion understandable enough for human review.",
+    "rationale": "Extracted from publicly observable Valuatum product outcomes."
+  },
+  "meaningful_outcome": "The caller receives a concise explanation of the principal supported risk drivers and limitations.",
+  "consumers": [
+    {
+      "persona": "credit decision-maker",
+      "outcome": "The caller receives a concise explanation of the principal supported risk drivers and limitations."
+    }
+  ],
+  "boundaries": {
+    "in_scope": [
+      "strengths, risks, and observations",
+      "uncertainty where known"
+    ],
+    "out_of_scope": [
+      "invented causal claims",
+      "replacement of human judgment"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "risk assessment",
+      "meaning": "Input required to explain a credit-risk assessment.",
+      "required": true
+    },
+    {
+      "name": "supporting company context",
+      "meaning": "Input required to explain a credit-risk assessment.",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "risk-driver explanation",
+      "meaning": "The caller receives a concise explanation of the principal supported risk drivers and limitations."
+    }
+  ],
+  "interaction_contracts": [
+    {
+      "id": "explain-credit-risk",
+      "actor": "credit decision-maker, application, or agent",
+      "command": "Explain a credit-risk assessment.",
+      "current_state": "The target company or request context is available; otherwise the request fails in a controlled way.",
+      "policies_invariants": [
+        "Return only information supported by available inputs and evidence.",
+        "The prototype realization must label every analytical output as synthetic."
+      ],
+      "transition": "No authoritative external company state changes; a result artifact is produced.",
+      "result": "The caller receives a concise explanation of the principal supported risk drivers and limitations.",
+      "effects": [
+        "A response or report may be returned to the caller."
+      ],
+      "unknowns": [
+        "How explanations are grounded and quality-controlled in production."
+      ]
+    }
+  ],
+  "rules_invariants": [
+    "Do not present unavailable or inferred information as observed fact.",
+    "A realization must preserve the capability purpose independently of its UI, API, MCP, or report surface."
+  ],
+  "recommended_defaults": [
+    "Return relevant uncertainty with the result.",
+    "Prefer concise explanations linked to the supporting data."
+  ],
+  "unknowns": [
+    "How explanations are grounded and quality-controlled in production."
+  ],
+  "evidence": [
+    {
+      "source_id": "luottoriskit",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "creditreports-dk",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    }
+  ],
+  "known_realizations": [
+    {
+      "product": "Luottoriskit.fi",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "CreditReports.dk",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    }
+  ],
+  "commercialization": {
+    "independently_sellable": "yes",
+    "notes": "Commercial packaging is illustrative; existing Valuatum pricing and product boundaries are not inferred."
+  },
+  "composability": [
+    {
+      "capability_id": "assess-company-credit-risk",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    }
+  ],
+  "statement_provenance": [
+    {
+      "statement": "Explain the principal evidence and drivers behind a company credit-risk conclusion.",
+      "semantic_class": "capability purpose",
+      "evidence_status": "reasonable inference",
+      "source": "luottoriskit, creditreports-dk"
+    },
+    {
+      "statement": "The caller receives a concise explanation of the principal supported risk drivers and limitations.",
+      "semantic_class": "meaningful outcome",
+      "evidence_status": "reasonable inference",
+      "source": "luottoriskit, creditreports-dk"
+    }
+  ],
+  "decision_log": [
+    "MLE check: Explain Credit Risk is independently understandable, invokable, and has a determinable outcome.",
+    "It remains separate from adjacent capabilities because those abilities can succeed or fail independently.",
+    "Technical surfaces are documented as realizations, not treated as the capability itself."
+  ]
+}

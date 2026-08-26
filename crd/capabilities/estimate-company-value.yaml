@@ -1,0 +1,159 @@
+{
+  "id": "estimate-company-value",
+  "name": "Estimate Company Value",
+  "status": "observed",
+  "confidence": "high",
+  "definition": "Produce an illustrative company-value estimate from company and financial context.",
+  "purpose": {
+    "user_problem": "Support ownership, transaction, and investment discussions with a reasoned company-value estimate.",
+    "rationale": "Extracted from publicly observable Valuatum product outcomes."
+  },
+  "meaningful_outcome": "A value estimate or range is returned with material assumptions and context.",
+  "consumers": [
+    {
+      "persona": "owner",
+      "outcome": "A value estimate or range is returned with material assumptions and context."
+    },
+    {
+      "persona": "advisor",
+      "outcome": "A value estimate or range is returned with material assumptions and context."
+    },
+    {
+      "persona": "investor",
+      "outcome": "A value estimate or range is returned with material assumptions and context."
+    }
+  ],
+  "boundaries": {
+    "in_scope": [
+      "valuation calculation",
+      "material assumptions"
+    ],
+    "out_of_scope": [
+      "binding transaction price",
+      "claim of certainty"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "company identifier",
+      "meaning": "Input required to estimate the value of a selected company.",
+      "required": true
+    },
+    {
+      "name": "financial context",
+      "meaning": "Input required to estimate the value of a selected company.",
+      "required": false
+    },
+    {
+      "name": "optional scenario assumptions",
+      "meaning": "Input required to estimate the value of a selected company.",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "value estimate or range",
+      "meaning": "A value estimate or range is returned with material assumptions and context."
+    }
+  ],
+  "interaction_contracts": [
+    {
+      "id": "estimate-company-value",
+      "actor": "owner, advisor, investor, application, or agent",
+      "command": "Estimate the value of a selected company.",
+      "current_state": "The target company or request context is available; otherwise the request fails in a controlled way.",
+      "policies_invariants": [
+        "Return only information supported by available inputs and evidence.",
+        "The prototype realization must label every analytical output as synthetic."
+      ],
+      "transition": "No authoritative external company state changes; a result artifact is produced.",
+      "result": "A value estimate or range is returned with material assumptions and context.",
+      "effects": [
+        "A response or report may be returned to the caller."
+      ],
+      "unknowns": [
+        "Exact valuation methods, weightings, and eligibility rules."
+      ]
+    }
+  ],
+  "rules_invariants": [
+    "Do not present unavailable or inferred information as observed fact.",
+    "A realization must preserve the capability purpose independently of its UI, API, MCP, or report surface."
+  ],
+  "recommended_defaults": [
+    "Return relevant uncertainty with the result.",
+    "Prefer concise explanations linked to the supporting data."
+  ],
+  "unknowns": [
+    "Exact valuation methods, weightings, and eligibility rules."
+  ],
+  "evidence": [
+    {
+      "source_id": "arvonmaaritys",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "creditreports-dk",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "valuatum-corporate",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    }
+  ],
+  "known_realizations": [
+    {
+      "product": "Arvonmaaritys.fi",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "CreditReports.dk",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "Valuatum Equity Research",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    }
+  ],
+  "commercialization": {
+    "independently_sellable": "yes",
+    "notes": "Commercial packaging is illustrative; existing Valuatum pricing and product boundaries are not inferred."
+  },
+  "composability": [
+    {
+      "capability_id": "explain-valuation-drivers",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    }
+  ],
+  "statement_provenance": [
+    {
+      "statement": "Produce an illustrative company-value estimate from company and financial context.",
+      "semantic_class": "capability purpose",
+      "evidence_status": "reasonable inference",
+      "source": "arvonmaaritys, creditreports-dk, valuatum-corporate"
+    },
+    {
+      "statement": "A value estimate or range is returned with material assumptions and context.",
+      "semantic_class": "meaningful outcome",
+      "evidence_status": "reasonable inference",
+      "source": "arvonmaaritys, creditreports-dk, valuatum-corporate"
+    }
+  ],
+  "decision_log": [
+    "MLE check: Estimate Company Value is independently understandable, invokable, and has a determinable outcome.",
+    "It remains separate from adjacent capabilities because those abilities can succeed or fail independently.",
+    "Technical surfaces are documented as realizations, not treated as the capability itself."
+  ]
+}

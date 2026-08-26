@@ -1,0 +1,170 @@
+{
+  "id": "retrieve-financial-profile",
+  "name": "Retrieve Financial Profile",
+  "status": "observed",
+  "confidence": "high",
+  "definition": "Provide company financial statements, metrics, ratios, and period context.",
+  "purpose": {
+    "user_problem": "Make company financial condition available for analysis and decision support.",
+    "rationale": "Extracted from publicly observable Valuatum product outcomes."
+  },
+  "meaningful_outcome": "Financial statements, selected metrics, ratios, and periods are returned with their context.",
+  "consumers": [
+    {
+      "persona": "analyst",
+      "outcome": "Financial statements, selected metrics, ratios, and periods are returned with their context."
+    },
+    {
+      "persona": "credit decision-maker",
+      "outcome": "Financial statements, selected metrics, ratios, and periods are returned with their context."
+    },
+    {
+      "persona": "investor",
+      "outcome": "Financial statements, selected metrics, ratios, and periods are returned with their context."
+    }
+  ],
+  "boundaries": {
+    "in_scope": [
+      "period-labelled financial figures",
+      "derived ratios when available"
+    ],
+    "out_of_scope": [
+      "a credit decision",
+      "a valuation conclusion"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "company identifier",
+      "meaning": "Input required to retrieve financial information for a selected company and period.",
+      "required": true
+    },
+    {
+      "name": "optional period",
+      "meaning": "Input required to retrieve financial information for a selected company and period.",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "financial statements, metrics, and ratios",
+      "meaning": "Financial statements, selected metrics, ratios, and periods are returned with their context."
+    }
+  ],
+  "interaction_contracts": [
+    {
+      "id": "retrieve-financial-profile",
+      "actor": "analyst, application, or agent",
+      "command": "Retrieve financial information for a selected company and period.",
+      "current_state": "The target company or request context is available; otherwise the request fails in a controlled way.",
+      "policies_invariants": [
+        "Return only information supported by available inputs and evidence.",
+        "The prototype realization must label every analytical output as synthetic."
+      ],
+      "transition": "No authoritative external company state changes; a result artifact is produced.",
+      "result": "Financial statements, selected metrics, ratios, and periods are returned with their context.",
+      "effects": [
+        "A response or report may be returned to the caller."
+      ],
+      "unknowns": [
+        "Exact source coverage, normalization, and ratio formulas."
+      ]
+    }
+  ],
+  "rules_invariants": [
+    "Do not present unavailable or inferred information as observed fact.",
+    "A realization must preserve the capability purpose independently of its UI, API, MCP, or report surface."
+  ],
+  "recommended_defaults": [
+    "Return relevant uncertainty with the result.",
+    "Prefer concise explanations linked to the supporting data."
+  ],
+  "unknowns": [
+    "Exact source coverage, normalization, and ratio formulas."
+  ],
+  "evidence": [
+    {
+      "source_id": "valuatum-corporate",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "luottoriskit",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "creditreports-dk",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "ai-equity-reports",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    }
+  ],
+  "known_realizations": [
+    {
+      "product": "Luottoriskit.fi",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "CreditReports.dk",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "AIEquityReports.com",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "Valuatum platforms",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    }
+  ],
+  "commercialization": {
+    "independently_sellable": "yes",
+    "notes": "Commercial packaging is illustrative; existing Valuatum pricing and product boundaries are not inferred."
+  },
+  "composability": [
+    {
+      "capability_id": "assess-company-credit-risk",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    },
+    {
+      "capability_id": "estimate-company-value",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    }
+  ],
+  "statement_provenance": [
+    {
+      "statement": "Provide company financial statements, metrics, ratios, and period context.",
+      "semantic_class": "capability purpose",
+      "evidence_status": "reasonable inference",
+      "source": "valuatum-corporate, luottoriskit, creditreports-dk, ai-equity-reports"
+    },
+    {
+      "statement": "Financial statements, selected metrics, ratios, and periods are returned with their context.",
+      "semantic_class": "meaningful outcome",
+      "evidence_status": "reasonable inference",
+      "source": "valuatum-corporate, luottoriskit, creditreports-dk, ai-equity-reports"
+    }
+  ],
+  "decision_log": [
+    "MLE check: Retrieve Financial Profile is independently understandable, invokable, and has a determinable outcome.",
+    "It remains separate from adjacent capabilities because those abilities can succeed or fail independently.",
+    "Technical surfaces are documented as realizations, not treated as the capability itself."
+  ]
+}

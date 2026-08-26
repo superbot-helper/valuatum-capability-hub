@@ -1,0 +1,138 @@
+{
+  "id": "summarize-financial-development",
+  "name": "Summarize Financial Development",
+  "status": "inferred",
+  "confidence": "medium",
+  "definition": "Explain material changes in a company's financial condition across periods.",
+  "purpose": {
+    "user_problem": "Help a decision-maker understand material financial change without inspecting every raw figure.",
+    "rationale": "Extracted from publicly observable Valuatum product outcomes."
+  },
+  "meaningful_outcome": "A period-aware narrative identifies supported strengths, weaknesses, and material changes.",
+  "consumers": [
+    {
+      "persona": "analyst",
+      "outcome": "A period-aware narrative identifies supported strengths, weaknesses, and material changes."
+    },
+    {
+      "persona": "decision-maker",
+      "outcome": "A period-aware narrative identifies supported strengths, weaknesses, and material changes."
+    }
+  ],
+  "boundaries": {
+    "in_scope": [
+      "period comparison",
+      "evidence-linked narrative"
+    ],
+    "out_of_scope": [
+      "unsupported causality",
+      "investment advice"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "company identifier",
+      "meaning": "Input required to summarize the financial development of a selected company.",
+      "required": true
+    },
+    {
+      "name": "financial periods",
+      "meaning": "Input required to summarize the financial development of a selected company.",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "financial-development summary",
+      "meaning": "A period-aware narrative identifies supported strengths, weaknesses, and material changes."
+    }
+  ],
+  "interaction_contracts": [
+    {
+      "id": "summarize-financial-development",
+      "actor": "analyst, application, or agent",
+      "command": "Summarize the financial development of a selected company.",
+      "current_state": "The target company or request context is available; otherwise the request fails in a controlled way.",
+      "policies_invariants": [
+        "Return only information supported by available inputs and evidence.",
+        "The prototype realization must label every analytical output as synthetic."
+      ],
+      "transition": "No authoritative external company state changes; a result artifact is produced.",
+      "result": "A period-aware narrative identifies supported strengths, weaknesses, and material changes.",
+      "effects": [
+        "A response or report may be returned to the caller."
+      ],
+      "unknowns": [
+        "The precise narrative method used by current products."
+      ]
+    }
+  ],
+  "rules_invariants": [
+    "Do not present unavailable or inferred information as observed fact.",
+    "A realization must preserve the capability purpose independently of its UI, API, MCP, or report surface."
+  ],
+  "recommended_defaults": [
+    "Return relevant uncertainty with the result.",
+    "Prefer concise explanations linked to the supporting data."
+  ],
+  "unknowns": [
+    "The precise narrative method used by current products."
+  ],
+  "evidence": [
+    {
+      "source_id": "creditreports-dk",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "ai-equity-reports",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    }
+  ],
+  "known_realizations": [
+    {
+      "product": "CreditReports.dk",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "AIEquityReports.com",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    }
+  ],
+  "commercialization": {
+    "independently_sellable": "yes",
+    "notes": "Commercial packaging is illustrative; existing Valuatum pricing and product boundaries are not inferred."
+  },
+  "composability": [
+    {
+      "capability_id": "create-company-decision-brief",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    }
+  ],
+  "statement_provenance": [
+    {
+      "statement": "Explain material changes in a company's financial condition across periods.",
+      "semantic_class": "capability purpose",
+      "evidence_status": "reasonable inference",
+      "source": "creditreports-dk, ai-equity-reports"
+    },
+    {
+      "statement": "A period-aware narrative identifies supported strengths, weaknesses, and material changes.",
+      "semantic_class": "meaningful outcome",
+      "evidence_status": "reasonable inference",
+      "source": "creditreports-dk, ai-equity-reports"
+    }
+  ],
+  "decision_log": [
+    "MLE check: Summarize Financial Development is independently understandable, invokable, and has a determinable outcome.",
+    "It remains separate from adjacent capabilities because those abilities can succeed or fail independently.",
+    "Technical surfaces are documented as realizations, not treated as the capability itself."
+  ]
+}

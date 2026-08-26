@@ -1,0 +1,46 @@
+[
+  {
+    "id":"northstar-components-oy","name":"Northstar Components Oy","identifier":"FI-9901001-1","country":"FI","industry":"Industrial components","status":"active","listed":false,
+    "context":"Established component manufacturer investing in a new production line.",
+    "financials":[{"period":"2023","turnover":18200000,"operatingResult":1460000,"assets":11800000,"equity":5100000,"debt":3900000,"cash":1200000},{"period":"2024","turnover":19800000,"operatingResult":1540000,"assets":12700000,"equity":5700000,"debt":4100000,"cash":980000},{"period":"2025","turnover":21400000,"operatingResult":1710000,"assets":13900000,"equity":6400000,"debt":4300000,"cash":1050000}],
+    "creditRisk":{"rating":"A","riskLevel":"low","confidence":0.86,"drivers":["Profitable three-year operating history","Equity ratio remains solid","Debt increased moderately with investment"],"creditLimit":750000},
+    "valuation":{"low":10500000,"midpoint":12100000,"high":13800000,"currency":"EUR","drivers":["Stable operating margin","Moderate growth","Capital intensity"],"assumptions":["Illustrative 6.5x–8.0x operating-profit range","No control premium"]}
+  },
+  {
+    "id":"aurora-analytics-oy","name":"Aurora Analytics Oy","identifier":"FI-9901002-2","country":"FI","industry":"Data software","status":"active","listed":false,
+    "context":"Fast-growing analytics vendor with recurring revenue and continued cash investment.",
+    "financials":[{"period":"2023","turnover":3200000,"operatingResult":-420000,"assets":2500000,"equity":1100000,"debt":700000,"cash":900000},{"period":"2024","turnover":5100000,"operatingResult":-180000,"assets":3700000,"equity":1450000,"debt":1050000,"cash":720000},{"period":"2025","turnover":7600000,"operatingResult":240000,"assets":4900000,"equity":1680000,"debt":1450000,"cash":510000}],
+    "creditRisk":{"rating":"B","riskLevel":"moderate","confidence":0.74,"drivers":["Rapid revenue growth","Recently reached operating profitability","Cash buffer declined while debt increased"],"creditLimit":180000},
+    "valuation":{"low":7200000,"midpoint":9300000,"high":12100000,"currency":"EUR","drivers":["High growth","Recurring-revenue potential","Limited profitability history"],"assumptions":["Illustrative growth-company revenue multiple","Execution discount applied"]}
+  },
+  {
+    "id":"granite-logistics-ab","name":"Granite Logistics AB","identifier":"SE-9901003","country":"SE","industry":"Logistics","status":"active","listed":false,
+    "context":"Regional logistics operator carrying significant fleet financing.",
+    "financials":[{"period":"2023","turnover":28600000,"operatingResult":1320000,"assets":20400000,"equity":4200000,"debt":11900000,"cash":620000},{"period":"2024","turnover":29400000,"operatingResult":980000,"assets":21100000,"equity":4350000,"debt":12400000,"cash":470000},{"period":"2025","turnover":30100000,"operatingResult":710000,"assets":21800000,"equity":4400000,"debt":13100000,"cash":390000}],
+    "creditRisk":{"rating":"C","riskLevel":"elevated","confidence":0.82,"drivers":["High leverage","Declining operating margin","Thin cash buffer"],"creditLimit":90000},
+    "valuation":{"low":4200000,"midpoint":5100000,"high":6200000,"currency":"EUR","drivers":["Large asset base","Margin pressure","High net debt"],"assumptions":["Illustrative asset and earnings blend","Debt deducted from enterprise value"]}
+  },
+  {
+    "id":"harbor-foods-as","name":"Harbor Foods AS","identifier":"NO-9901004","country":"NO","industry":"Food distribution","status":"active","listed":false,
+    "context":"Mature distributor with predictable demand and moderate growth.",
+    "financials":[{"period":"2023","turnover":16400000,"operatingResult":1180000,"assets":9200000,"equity":4800000,"debt":2100000,"cash":1350000},{"period":"2024","turnover":16900000,"operatingResult":1210000,"assets":9500000,"equity":5200000,"debt":1950000,"cash":1490000},{"period":"2025","turnover":17300000,"operatingResult":1260000,"assets":9800000,"equity":5600000,"debt":1800000,"cash":1580000}],
+    "creditRisk":{"rating":"AA","riskLevel":"very low","confidence":0.9,"drivers":["Stable profitability","Strengthening equity","Declining debt"],"creditLimit":900000},
+    "valuation":{"low":8500000,"midpoint":9400000,"high":10400000,"currency":"EUR","drivers":["Stable cash generation","Low leverage","Mature growth profile"],"assumptions":["Illustrative mature-company earnings multiple"]}
+  },
+  {
+    "id":"ember-retail-aps","name":"Ember Retail ApS","identifier":"DK-9901005","country":"DK","industry":"Specialty retail","status":"active","listed":false,
+    "context":"Retail chain facing declining store traffic and restructuring costs.",
+    "financials":[{"period":"2023","turnover":11900000,"operatingResult":520000,"assets":6800000,"equity":2500000,"debt":2300000,"cash":740000},{"period":"2024","turnover":10500000,"operatingResult":120000,"assets":6300000,"equity":2180000,"debt":2500000,"cash":410000},{"period":"2025","turnover":9100000,"operatingResult":-460000,"assets":5700000,"equity":1540000,"debt":2780000,"cash":190000}],
+    "creditRisk":{"rating":"D","riskLevel":"high","confidence":0.88,"drivers":["Revenue decline","Operating loss","Weakening liquidity and equity"],"creditLimit":25000},
+    "valuation":{"low":900000,"midpoint":1500000,"high":2300000,"currency":"EUR","drivers":["Turnaround uncertainty","Brand and store network","Negative recent earnings"],"assumptions":["Illustrative distressed range","No restructuring funding assumed"]}
+  },
+  {
+    "id":"polar-grid-plc","name":"Polar Grid Plc","identifier":"FI-9901006-6","country":"FI","industry":"Energy technology","status":"active","listed":true,"ticker":"PGRID.HE",
+    "context":"Fictional listed energy-technology company with international growth.",
+    "financials":[{"period":"2023","turnover":88000000,"operatingResult":7900000,"assets":72000000,"equity":33000000,"debt":19000000,"cash":9200000},{"period":"2024","turnover":101000000,"operatingResult":10200000,"assets":85000000,"equity":39000000,"debt":22000000,"cash":11400000},{"period":"2025","turnover":119000000,"operatingResult":13900000,"assets":99000000,"equity":47000000,"debt":24000000,"cash":14300000}],
+    "creditRisk":{"rating":"A","riskLevel":"low","confidence":0.84,"drivers":["Growing revenue and earnings","Healthy equity base","Manageable leverage"],"creditLimit":2200000},
+    "valuation":{"low":132000000,"midpoint":154000000,"high":181000000,"currency":"EUR","drivers":["International growth","Margin expansion","Execution and market-cycle risk"],"assumptions":["Illustrative DCF and peer-multiple blend","Synthetic share count"]},
+    "equity":{"stance":"constructive","risks":["Project timing","Input-cost volatility","Valuation sensitivity"],"reverseValuation":"The midpoint implies continued double-digit revenue growth and modest margin expansion."}
+  }
+]
+

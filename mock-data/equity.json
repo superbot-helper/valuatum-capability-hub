@@ -1,0 +1,16 @@
+{
+  "notice": "Prototype / synthetic data. Not a real Valuatum assessment.",
+  "records": [
+    {
+      "company_id": "polar-grid-plc",
+      "ticker": "PGRID.HE",
+      "stance": "constructive",
+      "risks": [
+        "Project timing",
+        "Input-cost volatility",
+        "Valuation sensitivity"
+      ],
+      "reverseValuation": "The midpoint implies continued double-digit revenue growth and modest margin expansion."
+    }
+  ]
+}

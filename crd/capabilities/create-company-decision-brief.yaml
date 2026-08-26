@@ -1,0 +1,142 @@
+{
+  "id": "create-company-decision-brief",
+  "name": "Create Company Decision Brief",
+  "status": "proposed",
+  "confidence": "high",
+  "definition": "Compose company identity, financial condition, risk, and valuation context into a decision-oriented brief.",
+  "purpose": {
+    "user_problem": "Help a human frame a company-related decision by composing several independently meaningful capabilities.",
+    "rationale": "Proposed by the prototype to demonstrate cross-capability composition."
+  },
+  "meaningful_outcome": "A concise brief presents company context, financial condition, risk, relevant valuation context, uncertainties, and next questions.",
+  "consumers": [
+    {
+      "persona": "procurement manager",
+      "outcome": "A concise brief presents company context, financial condition, risk, relevant valuation context, uncertainties, and next questions."
+    },
+    {
+      "persona": "credit decision-maker",
+      "outcome": "A concise brief presents company context, financial condition, risk, relevant valuation context, uncertainties, and next questions."
+    },
+    {
+      "persona": "advisor",
+      "outcome": "A concise brief presents company context, financial condition, risk, relevant valuation context, uncertainties, and next questions."
+    }
+  ],
+  "boundaries": {
+    "in_scope": [
+      "composition of identity, financial, credit-risk, and optional valuation outputs",
+      "uncertainties and next questions"
+    ],
+    "out_of_scope": [
+      "autonomous final decision",
+      "claim that Valuatum currently offers this workflow"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "company identifier",
+      "meaning": "Input required to create a decision brief for a selected company and decision context.",
+      "required": true
+    },
+    {
+      "name": "decision context",
+      "meaning": "Input required to create a decision brief for a selected company and decision context.",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "decision brief",
+      "meaning": "A concise brief presents company context, financial condition, risk, relevant valuation context, uncertainties, and next questions."
+    }
+  ],
+  "interaction_contracts": [
+    {
+      "id": "create-company-decision-brief",
+      "actor": "procurement manager, credit decision-maker, advisor, application, or agent",
+      "command": "Create a decision brief for a selected company and decision context.",
+      "current_state": "The target company or request context is available; otherwise the request fails in a controlled way.",
+      "policies_invariants": [
+        "Return only information supported by available inputs and evidence.",
+        "The prototype realization must label every analytical output as synthetic."
+      ],
+      "transition": "No authoritative external company state changes; a result artifact is produced.",
+      "result": "A concise brief presents company context, financial condition, risk, relevant valuation context, uncertainties, and next questions.",
+      "effects": [
+        "A response or report may be returned to the caller."
+      ],
+      "unknowns": [
+        "Which decision contexts would have commercial priority and what approvals production use would require."
+      ]
+    }
+  ],
+  "rules_invariants": [
+    "Do not present unavailable or inferred information as observed fact.",
+    "A realization must preserve the capability purpose independently of its UI, API, MCP, or report surface."
+  ],
+  "recommended_defaults": [
+    "Return relevant uncertainty with the result.",
+    "Prefer concise explanations linked to the supporting data."
+  ],
+  "unknowns": [
+    "Which decision contexts would have commercial priority and what approvals production use would require."
+  ],
+  "evidence": [
+    {
+      "source_id": "implementation-brief",
+      "access_date": "2026-08-26",
+      "evidence_type": "proposed",
+      "note": "Prototype requirement; not claimed as an existing Valuatum capability."
+    }
+  ],
+  "known_realizations": [
+    {
+      "product": "Capability Hub prototype",
+      "surface": "MCP and HTTP prototype",
+      "execution_mode": "software-primary",
+      "note": "Prototype realization."
+    }
+  ],
+  "commercialization": {
+    "independently_sellable": "proposed",
+    "notes": "Commercial packaging is illustrative; existing Valuatum pricing and product boundaries are not inferred."
+  },
+  "composability": [
+    {
+      "capability_id": "retrieve-company-profile",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    },
+    {
+      "capability_id": "retrieve-financial-profile",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    },
+    {
+      "capability_id": "assess-company-credit-risk",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    },
+    {
+      "capability_id": "estimate-company-value",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    }
+  ],
+  "statement_provenance": [
+    {
+      "statement": "Compose company identity, financial condition, risk, and valuation context into a decision-oriented brief.",
+      "semantic_class": "capability purpose",
+      "evidence_status": "proposed",
+      "source": "implementation-brief"
+    },
+    {
+      "statement": "A concise brief presents company context, financial condition, risk, relevant valuation context, uncertainties, and next questions.",
+      "semantic_class": "meaningful outcome",
+      "evidence_status": "proposed",
+      "source": "implementation-brief"
+    }
+  ],
+  "decision_log": [
+    "MLE check: Create Company Decision Brief is independently understandable, invokable, and has a determinable outcome.",
+    "It remains separate from adjacent capabilities because those abilities can succeed or fail independently.",
+    "This capability is proposed and has one known prototype realization."
+  ]
+}

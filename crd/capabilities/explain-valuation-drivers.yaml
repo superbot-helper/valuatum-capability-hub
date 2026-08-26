@@ -1,0 +1,147 @@
+{
+  "id": "explain-valuation-drivers",
+  "name": "Explain Valuation Drivers",
+  "status": "observed",
+  "confidence": "medium",
+  "definition": "Explain assumptions and factors materially affecting a company valuation.",
+  "purpose": {
+    "user_problem": "Make the factors affecting an estimate understandable and reviewable.",
+    "rationale": "Extracted from publicly observable Valuatum product outcomes."
+  },
+  "meaningful_outcome": "The caller can identify the assumptions and drivers most material to the valuation.",
+  "consumers": [
+    {
+      "persona": "owner",
+      "outcome": "The caller can identify the assumptions and drivers most material to the valuation."
+    },
+    {
+      "persona": "advisor",
+      "outcome": "The caller can identify the assumptions and drivers most material to the valuation."
+    },
+    {
+      "persona": "investor",
+      "outcome": "The caller can identify the assumptions and drivers most material to the valuation."
+    }
+  ],
+  "boundaries": {
+    "in_scope": [
+      "material assumptions",
+      "value-driver narrative"
+    ],
+    "out_of_scope": [
+      "unsupported forecast certainty"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "valuation result",
+      "meaning": "Input required to explain the drivers of a company valuation.",
+      "required": true
+    },
+    {
+      "name": "supporting assumptions",
+      "meaning": "Input required to explain the drivers of a company valuation.",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "driver and sensitivity explanation",
+      "meaning": "The caller can identify the assumptions and drivers most material to the valuation."
+    }
+  ],
+  "interaction_contracts": [
+    {
+      "id": "explain-valuation-drivers",
+      "actor": "owner, advisor, investor, application, or agent",
+      "command": "Explain the drivers of a company valuation.",
+      "current_state": "The target company or request context is available; otherwise the request fails in a controlled way.",
+      "policies_invariants": [
+        "Return only information supported by available inputs and evidence.",
+        "The prototype realization must label every analytical output as synthetic."
+      ],
+      "transition": "No authoritative external company state changes; a result artifact is produced.",
+      "result": "The caller can identify the assumptions and drivers most material to the valuation.",
+      "effects": [
+        "A response or report may be returned to the caller."
+      ],
+      "unknowns": [
+        "Whether all current products expose sensitivity analysis."
+      ]
+    }
+  ],
+  "rules_invariants": [
+    "Do not present unavailable or inferred information as observed fact.",
+    "A realization must preserve the capability purpose independently of its UI, API, MCP, or report surface."
+  ],
+  "recommended_defaults": [
+    "Return relevant uncertainty with the result.",
+    "Prefer concise explanations linked to the supporting data."
+  ],
+  "unknowns": [
+    "Whether all current products expose sensitivity analysis."
+  ],
+  "evidence": [
+    {
+      "source_id": "arvonmaaritys",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "ai-equity-reports",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "valuatum-corporate",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    }
+  ],
+  "known_realizations": [
+    {
+      "product": "Arvonmaaritys.fi",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "AIEquityReports.com",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    }
+  ],
+  "commercialization": {
+    "independently_sellable": "yes",
+    "notes": "Commercial packaging is illustrative; existing Valuatum pricing and product boundaries are not inferred."
+  },
+  "composability": [
+    {
+      "capability_id": "estimate-company-value",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    }
+  ],
+  "statement_provenance": [
+    {
+      "statement": "Explain assumptions and factors materially affecting a company valuation.",
+      "semantic_class": "capability purpose",
+      "evidence_status": "reasonable inference",
+      "source": "arvonmaaritys, ai-equity-reports, valuatum-corporate"
+    },
+    {
+      "statement": "The caller can identify the assumptions and drivers most material to the valuation.",
+      "semantic_class": "meaningful outcome",
+      "evidence_status": "reasonable inference",
+      "source": "arvonmaaritys, ai-equity-reports, valuatum-corporate"
+    }
+  ],
+  "decision_log": [
+    "MLE check: Explain Valuation Drivers is independently understandable, invokable, and has a determinable outcome.",
+    "It remains separate from adjacent capabilities because those abilities can succeed or fail independently.",
+    "Technical surfaces are documented as realizations, not treated as the capability itself."
+  ]
+}

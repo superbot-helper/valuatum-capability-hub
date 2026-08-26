@@ -1,0 +1,138 @@
+{
+  "id": "analyze-listed-company",
+  "name": "Analyze Listed Company",
+  "status": "observed",
+  "confidence": "high",
+  "definition": "Produce investment-relevant analysis for a selected listed company.",
+  "purpose": {
+    "user_problem": "Support investment research by structuring financially relevant evidence about a listed company.",
+    "rationale": "Extracted from publicly observable Valuatum product outcomes."
+  },
+  "meaningful_outcome": "Investment-relevant financial, valuation, segment, and risk analysis is available for review.",
+  "consumers": [
+    {
+      "persona": "investor",
+      "outcome": "Investment-relevant financial, valuation, segment, and risk analysis is available for review."
+    },
+    {
+      "persona": "analyst",
+      "outcome": "Investment-relevant financial, valuation, segment, and risk analysis is available for review."
+    }
+  ],
+  "boundaries": {
+    "in_scope": [
+      "financial analysis",
+      "valuation and risk perspectives where supported"
+    ],
+    "out_of_scope": [
+      "personal investment advice",
+      "guaranteed return"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "company or ticker",
+      "meaning": "Input required to analyze a selected listed company.",
+      "required": true
+    },
+    {
+      "name": "available market and financial context",
+      "meaning": "Input required to analyze a selected listed company.",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "listed-company analysis",
+      "meaning": "Investment-relevant financial, valuation, segment, and risk analysis is available for review."
+    }
+  ],
+  "interaction_contracts": [
+    {
+      "id": "analyze-listed-company",
+      "actor": "investor, analyst, application, or agent",
+      "command": "Analyze a selected listed company.",
+      "current_state": "The target company or request context is available; otherwise the request fails in a controlled way.",
+      "policies_invariants": [
+        "Return only information supported by available inputs and evidence.",
+        "The prototype realization must label every analytical output as synthetic."
+      ],
+      "transition": "No authoritative external company state changes; a result artifact is produced.",
+      "result": "Investment-relevant financial, valuation, segment, and risk analysis is available for review.",
+      "effects": [
+        "A response or report may be returned to the caller."
+      ],
+      "unknowns": [
+        "Exact data vendors, model controls, and analyst review process."
+      ]
+    }
+  ],
+  "rules_invariants": [
+    "Do not present unavailable or inferred information as observed fact.",
+    "A realization must preserve the capability purpose independently of its UI, API, MCP, or report surface."
+  ],
+  "recommended_defaults": [
+    "Return relevant uncertainty with the result.",
+    "Prefer concise explanations linked to the supporting data."
+  ],
+  "unknowns": [
+    "Exact data vendors, model controls, and analyst review process."
+  ],
+  "evidence": [
+    {
+      "source_id": "ai-equity-reports",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "valuatum-corporate",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    }
+  ],
+  "known_realizations": [
+    {
+      "product": "AIEquityReports.com",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "Valuatum Equity Research Platform",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    }
+  ],
+  "commercialization": {
+    "independently_sellable": "yes",
+    "notes": "Commercial packaging is illustrative; existing Valuatum pricing and product boundaries are not inferred."
+  },
+  "composability": [
+    {
+      "capability_id": "generate-equity-report",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    }
+  ],
+  "statement_provenance": [
+    {
+      "statement": "Produce investment-relevant analysis for a selected listed company.",
+      "semantic_class": "capability purpose",
+      "evidence_status": "reasonable inference",
+      "source": "ai-equity-reports, valuatum-corporate"
+    },
+    {
+      "statement": "Investment-relevant financial, valuation, segment, and risk analysis is available for review.",
+      "semantic_class": "meaningful outcome",
+      "evidence_status": "reasonable inference",
+      "source": "ai-equity-reports, valuatum-corporate"
+    }
+  ],
+  "decision_log": [
+    "MLE check: Analyze Listed Company is independently understandable, invokable, and has a determinable outcome.",
+    "It remains separate from adjacent capabilities because those abilities can succeed or fail independently.",
+    "Technical surfaces are documented as realizations, not treated as the capability itself."
+  ]
+}

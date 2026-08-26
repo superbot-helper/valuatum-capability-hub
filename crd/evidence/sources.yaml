@@ -1,0 +1,33 @@
+access_date: 2026-08-26
+sources:
+  - id: valuatum-corporate
+    url: https://www.valuatum.com/
+    title: Valuatum — Financial Analysis Solutions
+    evidence: "Public navigation identifies Credit Risk Platform, Equity Research Platform, AI Company Valuation, AI Credit Risk Reports, company views, comparisons, automatic reports, an analysis engine, valuation models, widgets, and REST API delivery."
+    confidence: high
+  - id: luottoriskit
+    url: https://www.luottoriskit.fi/
+    title: Valuatum Talousanalyysi / Luottoriskit.fi
+    evidence: "Public surfaces support company search by name or Finnish business ID, company profiles, financial ratios, industries, locations, and AI credit-risk reports."
+    confidence: high
+  - id: arvonmaaritys
+    url: https://www.arvonmaaritys.fi/
+    title: Yrityksen arvonmääritys
+    evidence: "Public service offers company valuation, a valuation calculator, valuation multiples, and contexts including company sale and succession."
+    confidence: high
+  - id: ai-equity-reports
+    url: https://www.aiequityreports.com/
+    title: Valuatum AI Equity Reports
+    evidence: "Public pages offer ready or newly generated listed-company reports with segment value analysis, reverse valuation, risk assessment, financial statements, PDF delivery, and company/ticker search."
+    confidence: high
+  - id: creditreports-dk
+    url: https://www.creditreports.dk/en/
+    title: CreditReports.dk
+    evidence: "Public pages support Danish company search by name/CVR, profiles, accounts, ratios, credit scores, ratings, bankruptcy risk, credit limits, AI-supported conclusions, comparison, and valuation products."
+    confidence: high
+  - id: implementation-brief
+    url: local:Valuatum_Task1_Agent_Implementation_Spec.md
+    title: Valuatum Task 1 Agent Implementation Specification
+    evidence: "Defines prototype principles, proposed composition, technical realization, safety constraints, and acceptance criteria."
+    confidence: high
+

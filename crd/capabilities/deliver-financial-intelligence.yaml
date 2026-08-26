@@ -1,0 +1,126 @@
+{
+  "id": "deliver-financial-intelligence",
+  "name": "Deliver Financial Intelligence",
+  "status": "observed",
+  "confidence": "medium",
+  "definition": "Make financial-analysis outputs consumable through an integration surface.",
+  "purpose": {
+    "user_problem": "Allow another product or workflow to consume financial-analysis outputs.",
+    "rationale": "Extracted from publicly observable Valuatum product outcomes."
+  },
+  "meaningful_outcome": "A documented integration surface returns supported financial intelligence in a consumable form.",
+  "consumers": [
+    {
+      "persona": "developer",
+      "outcome": "A documented integration surface returns supported financial intelligence in a consumable form."
+    },
+    {
+      "persona": "product team",
+      "outcome": "A documented integration surface returns supported financial intelligence in a consumable form."
+    }
+  ],
+  "boundaries": {
+    "in_scope": [
+      "API or widget delivery evidenced publicly",
+      "traceability to the underlying analytical ability"
+    ],
+    "out_of_scope": [
+      "treating the endpoint itself as the capability",
+      "undocumented private APIs"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "authorized request",
+      "meaning": "Input required to request a supported analytical output through an integration surface.",
+      "required": true
+    },
+    {
+      "name": "capability-specific input",
+      "meaning": "Input required to request a supported analytical output through an integration surface.",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "structured analytical response",
+      "meaning": "A documented integration surface returns supported financial intelligence in a consumable form."
+    }
+  ],
+  "interaction_contracts": [
+    {
+      "id": "deliver-financial-intelligence",
+      "actor": "developer, application, or agent",
+      "command": "Request a supported analytical output through an integration surface.",
+      "current_state": "The target company or request context is available; otherwise the request fails in a controlled way.",
+      "policies_invariants": [
+        "Return only information supported by available inputs and evidence.",
+        "The prototype realization must label every analytical output as synthetic."
+      ],
+      "transition": "No authoritative external company state changes; a result artifact is produced.",
+      "result": "A documented integration surface returns supported financial intelligence in a consumable form.",
+      "effects": [
+        "A response or report may be returned to the caller."
+      ],
+      "unknowns": [
+        "Current authentication, quotas, schemas, and product availability."
+      ]
+    }
+  ],
+  "rules_invariants": [
+    "Do not present unavailable or inferred information as observed fact.",
+    "A realization must preserve the capability purpose independently of its UI, API, MCP, or report surface."
+  ],
+  "recommended_defaults": [
+    "Return relevant uncertainty with the result.",
+    "Prefer concise explanations linked to the supporting data."
+  ],
+  "unknowns": [
+    "Current authentication, quotas, schemas, and product availability."
+  ],
+  "evidence": [
+    {
+      "source_id": "valuatum-corporate",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    }
+  ],
+  "known_realizations": [
+    {
+      "product": "Valuatum Equity Research Platform",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    }
+  ],
+  "commercialization": {
+    "independently_sellable": "yes",
+    "notes": "Commercial packaging is illustrative; existing Valuatum pricing and product boundaries are not inferred."
+  },
+  "composability": [
+    {
+      "capability_id": "analyze-listed-company",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    }
+  ],
+  "statement_provenance": [
+    {
+      "statement": "Make financial-analysis outputs consumable through an integration surface.",
+      "semantic_class": "capability purpose",
+      "evidence_status": "reasonable inference",
+      "source": "valuatum-corporate"
+    },
+    {
+      "statement": "A documented integration surface returns supported financial intelligence in a consumable form.",
+      "semantic_class": "meaningful outcome",
+      "evidence_status": "reasonable inference",
+      "source": "valuatum-corporate"
+    }
+  ],
+  "decision_log": [
+    "MLE check: Deliver Financial Intelligence is independently understandable, invokable, and has a determinable outcome.",
+    "It remains separate from adjacent capabilities because those abilities can succeed or fail independently.",
+    "Technical surfaces are documented as realizations, not treated as the capability itself."
+  ]
+}

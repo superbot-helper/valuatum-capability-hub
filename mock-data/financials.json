@@ -1,0 +1,197 @@
+{
+  "notice": "Prototype / synthetic data. Not a real Valuatum assessment.",
+  "records": [
+    {
+      "company_id": "northstar-components-oy",
+      "periods": [
+        {
+          "period": "2023",
+          "turnover": 18200000,
+          "operatingResult": 1460000,
+          "assets": 11800000,
+          "equity": 5100000,
+          "debt": 3900000,
+          "cash": 1200000
+        },
+        {
+          "period": "2024",
+          "turnover": 19800000,
+          "operatingResult": 1540000,
+          "assets": 12700000,
+          "equity": 5700000,
+          "debt": 4100000,
+          "cash": 980000
+        },
+        {
+          "period": "2025",
+          "turnover": 21400000,
+          "operatingResult": 1710000,
+          "assets": 13900000,
+          "equity": 6400000,
+          "debt": 4300000,
+          "cash": 1050000
+        }
+      ]
+    },
+    {
+      "company_id": "aurora-analytics-oy",
+      "periods": [
+        {
+          "period": "2023",
+          "turnover": 3200000,
+          "operatingResult": -420000,
+          "assets": 2500000,
+          "equity": 1100000,
+          "debt": 700000,
+          "cash": 900000
+        },
+        {
+          "period": "2024",
+          "turnover": 5100000,
+          "operatingResult": -180000,
+          "assets": 3700000,
+          "equity": 1450000,
+          "debt": 1050000,
+          "cash": 720000
+        },
+        {
+          "period": "2025",
+          "turnover": 7600000,
+          "operatingResult": 240000,
+          "assets": 4900000,
+          "equity": 1680000,
+          "debt": 1450000,
+          "cash": 510000
+        }
+      ]
+    },
+    {
+      "company_id": "granite-logistics-ab",
+      "periods": [
+        {
+          "period": "2023",
+          "turnover": 28600000,
+          "operatingResult": 1320000,
+          "assets": 20400000,
+          "equity": 4200000,
+          "debt": 11900000,
+          "cash": 620000
+        },
+        {
+          "period": "2024",
+          "turnover": 29400000,
+          "operatingResult": 980000,
+          "assets": 21100000,
+          "equity": 4350000,
+          "debt": 12400000,
+          "cash": 470000
+        },
+        {
+          "period": "2025",
+          "turnover": 30100000,
+          "operatingResult": 710000,
+          "assets": 21800000,
+          "equity": 4400000,
+          "debt": 13100000,
+          "cash": 390000
+        }
+      ]
+    },
+    {
+      "company_id": "harbor-foods-as",
+      "periods": [
+        {
+          "period": "2023",
+          "turnover": 16400000,
+          "operatingResult": 1180000,
+          "assets": 9200000,
+          "equity": 4800000,
+          "debt": 2100000,
+          "cash": 1350000
+        },
+        {
+          "period": "2024",
+          "turnover": 16900000,
+          "operatingResult": 1210000,
+          "assets": 9500000,
+          "equity": 5200000,
+          "debt": 1950000,
+          "cash": 1490000
+        },
+        {
+          "period": "2025",
+          "turnover": 17300000,
+          "operatingResult": 1260000,
+          "assets": 9800000,
+          "equity": 5600000,
+          "debt": 1800000,
+          "cash": 1580000
+        }
+      ]
+    },
+    {
+      "company_id": "ember-retail-aps",
+      "periods": [
+        {
+          "period": "2023",
+          "turnover": 11900000,
+          "operatingResult": 520000,
+          "assets": 6800000,
+          "equity": 2500000,
+          "debt": 2300000,
+          "cash": 740000
+        },
+        {
+          "period": "2024",
+          "turnover": 10500000,
+          "operatingResult": 120000,
+          "assets": 6300000,
+          "equity": 2180000,
+          "debt": 2500000,
+          "cash": 410000
+        },
+        {
+          "period": "2025",
+          "turnover": 9100000,
+          "operatingResult": -460000,
+          "assets": 5700000,
+          "equity": 1540000,
+          "debt": 2780000,
+          "cash": 190000
+        }
+      ]
+    },
+    {
+      "company_id": "polar-grid-plc",
+      "periods": [
+        {
+          "period": "2023",
+          "turnover": 88000000,
+          "operatingResult": 7900000,
+          "assets": 72000000,
+          "equity": 33000000,
+          "debt": 19000000,
+          "cash": 9200000
+        },
+        {
+          "period": "2024",
+          "turnover": 101000000,
+          "operatingResult": 10200000,
+          "assets": 85000000,
+          "equity": 39000000,
+          "debt": 22000000,
+          "cash": 11400000
+        },
+        {
+          "period": "2025",
+          "turnover": 119000000,
+          "operatingResult": 13900000,
+          "assets": 99000000,
+          "equity": 47000000,
+          "debt": 24000000,
+          "cash": 14300000
+        }
+      ]
+    }
+  ]
+}

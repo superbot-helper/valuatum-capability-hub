@@ -1,0 +1,149 @@
+{
+  "id": "find-company",
+  "name": "Find Company",
+  "status": "observed",
+  "confidence": "high",
+  "definition": "Resolve a company name or registered identifier to a company entity.",
+  "purpose": {
+    "user_problem": "Enable a caller to select the intended company before requesting company-specific intelligence.",
+    "rationale": "Extracted from publicly observable Valuatum product outcomes."
+  },
+  "meaningful_outcome": "One or more candidate company entities are returned with enough identifying context for selection.",
+  "consumers": [
+    {
+      "persona": "finance professional",
+      "outcome": "One or more candidate company entities are returned with enough identifying context for selection."
+    },
+    {
+      "persona": "investor",
+      "outcome": "One or more candidate company entities are returned with enough identifying context for selection."
+    },
+    {
+      "persona": "developer",
+      "outcome": "One or more candidate company entities are returned with enough identifying context for selection."
+    }
+  ],
+  "boundaries": {
+    "in_scope": [
+      "matching company identifiers and names",
+      "returning selection context"
+    ],
+    "out_of_scope": [
+      "credit conclusions",
+      "valuation"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "query",
+      "meaning": "Input required to find companies matching a name, ticker, or registered identifier.",
+      "required": true
+    }
+  ],
+  "outputs": [
+    {
+      "name": "candidate company entities",
+      "meaning": "One or more candidate company entities are returned with enough identifying context for selection."
+    }
+  ],
+  "interaction_contracts": [
+    {
+      "id": "find-company",
+      "actor": "person, application, or agent",
+      "command": "Find companies matching a name, ticker, or registered identifier.",
+      "current_state": "The target company or request context is available; otherwise the request fails in a controlled way.",
+      "policies_invariants": [
+        "Return only information supported by available inputs and evidence.",
+        "The prototype realization must label every analytical output as synthetic."
+      ],
+      "transition": "No authoritative external company state changes; a result artifact is produced.",
+      "result": "One or more candidate company entities are returned with enough identifying context for selection.",
+      "effects": [
+        "A response or report may be returned to the caller."
+      ],
+      "unknowns": [
+        "Exact matching and ranking rules used by existing products."
+      ]
+    }
+  ],
+  "rules_invariants": [
+    "Do not present unavailable or inferred information as observed fact.",
+    "A realization must preserve the capability purpose independently of its UI, API, MCP, or report surface."
+  ],
+  "recommended_defaults": [
+    "Return relevant uncertainty with the result.",
+    "Prefer concise explanations linked to the supporting data."
+  ],
+  "unknowns": [
+    "Exact matching and ranking rules used by existing products."
+  ],
+  "evidence": [
+    {
+      "source_id": "luottoriskit",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "creditreports-dk",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "ai-equity-reports",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    }
+  ],
+  "known_realizations": [
+    {
+      "product": "Luottoriskit.fi",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "CreditReports.dk",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "AIEquityReports.com",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    }
+  ],
+  "commercialization": {
+    "independently_sellable": "yes",
+    "notes": "Commercial packaging is illustrative; existing Valuatum pricing and product boundaries are not inferred."
+  },
+  "composability": [
+    {
+      "capability_id": "retrieve-company-profile",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    }
+  ],
+  "statement_provenance": [
+    {
+      "statement": "Resolve a company name or registered identifier to a company entity.",
+      "semantic_class": "capability purpose",
+      "evidence_status": "reasonable inference",
+      "source": "luottoriskit, creditreports-dk, ai-equity-reports"
+    },
+    {
+      "statement": "One or more candidate company entities are returned with enough identifying context for selection.",
+      "semantic_class": "meaningful outcome",
+      "evidence_status": "reasonable inference",
+      "source": "luottoriskit, creditreports-dk, ai-equity-reports"
+    }
+  ],
+  "decision_log": [
+    "MLE check: Find Company is independently understandable, invokable, and has a determinable outcome.",
+    "It remains separate from adjacent capabilities because those abilities can succeed or fail independently.",
+    "Technical surfaces are documented as realizations, not treated as the capability itself."
+  ]
+}

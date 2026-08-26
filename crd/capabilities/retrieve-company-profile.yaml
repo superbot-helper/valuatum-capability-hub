@@ -1,0 +1,133 @@
+{
+  "id": "retrieve-company-profile",
+  "name": "Retrieve Company Profile",
+  "status": "observed",
+  "confidence": "high",
+  "definition": "Provide identifying and registration context for a selected company.",
+  "purpose": {
+    "user_problem": "Provide reliable basic context about a selected company.",
+    "rationale": "Extracted from publicly observable Valuatum product outcomes."
+  },
+  "meaningful_outcome": "The caller receives the available identity, registration, country, industry, and status context.",
+  "consumers": [
+    {
+      "persona": "credit decision-maker",
+      "outcome": "The caller receives the available identity, registration, country, industry, and status context."
+    },
+    {
+      "persona": "finance professional",
+      "outcome": "The caller receives the available identity, registration, country, industry, and status context."
+    }
+  ],
+  "boundaries": {
+    "in_scope": [
+      "identity and registration context",
+      "basic descriptive attributes"
+    ],
+    "out_of_scope": [
+      "analytical rating",
+      "financial recommendation"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "company identifier",
+      "meaning": "Input required to retrieve the profile for a selected company.",
+      "required": true
+    }
+  ],
+  "outputs": [
+    {
+      "name": "company profile",
+      "meaning": "The caller receives the available identity, registration, country, industry, and status context."
+    }
+  ],
+  "interaction_contracts": [
+    {
+      "id": "retrieve-company-profile",
+      "actor": "person, application, or agent",
+      "command": "Retrieve the profile for a selected company.",
+      "current_state": "The target company or request context is available; otherwise the request fails in a controlled way.",
+      "policies_invariants": [
+        "Return only information supported by available inputs and evidence.",
+        "The prototype realization must label every analytical output as synthetic."
+      ],
+      "transition": "No authoritative external company state changes; a result artifact is produced.",
+      "result": "The caller receives the available identity, registration, country, industry, and status context.",
+      "effects": [
+        "A response or report may be returned to the caller."
+      ],
+      "unknowns": [
+        "Which profile fields are available consistently across countries."
+      ]
+    }
+  ],
+  "rules_invariants": [
+    "Do not present unavailable or inferred information as observed fact.",
+    "A realization must preserve the capability purpose independently of its UI, API, MCP, or report surface."
+  ],
+  "recommended_defaults": [
+    "Return relevant uncertainty with the result.",
+    "Prefer concise explanations linked to the supporting data."
+  ],
+  "unknowns": [
+    "Which profile fields are available consistently across countries."
+  ],
+  "evidence": [
+    {
+      "source_id": "luottoriskit",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "creditreports-dk",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    }
+  ],
+  "known_realizations": [
+    {
+      "product": "Luottoriskit.fi",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "CreditReports.dk",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    }
+  ],
+  "commercialization": {
+    "independently_sellable": "yes",
+    "notes": "Commercial packaging is illustrative; existing Valuatum pricing and product boundaries are not inferred."
+  },
+  "composability": [
+    {
+      "capability_id": "retrieve-financial-profile",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    }
+  ],
+  "statement_provenance": [
+    {
+      "statement": "Provide identifying and registration context for a selected company.",
+      "semantic_class": "capability purpose",
+      "evidence_status": "reasonable inference",
+      "source": "luottoriskit, creditreports-dk"
+    },
+    {
+      "statement": "The caller receives the available identity, registration, country, industry, and status context.",
+      "semantic_class": "meaningful outcome",
+      "evidence_status": "reasonable inference",
+      "source": "luottoriskit, creditreports-dk"
+    }
+  ],
+  "decision_log": [
+    "MLE check: Retrieve Company Profile is independently understandable, invokable, and has a determinable outcome.",
+    "It remains separate from adjacent capabilities because those abilities can succeed or fail independently.",
+    "Technical surfaces are documented as realizations, not treated as the capability itself."
+  ]
+}

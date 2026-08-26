@@ -1,0 +1,141 @@
+{
+  "id": "compare-companies",
+  "name": "Compare Companies",
+  "status": "observed",
+  "confidence": "high",
+  "definition": "Compare selected companies across common financial or risk dimensions.",
+  "purpose": {
+    "user_problem": "Help a caller identify material differences between companies using comparable dimensions.",
+    "rationale": "Extracted from publicly observable Valuatum product outcomes."
+  },
+  "meaningful_outcome": "A normalized comparison and summary of material differences is returned.",
+  "consumers": [
+    {
+      "persona": "analyst",
+      "outcome": "A normalized comparison and summary of material differences is returned."
+    },
+    {
+      "persona": "portfolio owner",
+      "outcome": "A normalized comparison and summary of material differences is returned."
+    }
+  ],
+  "boundaries": {
+    "in_scope": [
+      "common metrics",
+      "relative differences"
+    ],
+    "out_of_scope": [
+      "automatic winner selection unless explicitly requested and supported"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "two or more company identifiers",
+      "meaning": "Input required to compare selected companies across supported dimensions.",
+      "required": true
+    },
+    {
+      "name": "comparison dimensions",
+      "meaning": "Input required to compare selected companies across supported dimensions.",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "comparison results and summary",
+      "meaning": "A normalized comparison and summary of material differences is returned."
+    }
+  ],
+  "interaction_contracts": [
+    {
+      "id": "compare-companies",
+      "actor": "analyst, portfolio owner, application, or agent",
+      "command": "Compare selected companies across supported dimensions.",
+      "current_state": "The target company or request context is available; otherwise the request fails in a controlled way.",
+      "policies_invariants": [
+        "Return only information supported by available inputs and evidence.",
+        "The prototype realization must label every analytical output as synthetic."
+      ],
+      "transition": "No authoritative external company state changes; a result artifact is produced.",
+      "result": "A normalized comparison and summary of material differences is returned.",
+      "effects": [
+        "A response or report may be returned to the caller."
+      ],
+      "unknowns": [
+        "Supported peer-selection and normalization rules in current products."
+      ]
+    }
+  ],
+  "rules_invariants": [
+    "Do not present unavailable or inferred information as observed fact.",
+    "A realization must preserve the capability purpose independently of its UI, API, MCP, or report surface."
+  ],
+  "recommended_defaults": [
+    "Return relevant uncertainty with the result.",
+    "Prefer concise explanations linked to the supporting data."
+  ],
+  "unknowns": [
+    "Supported peer-selection and normalization rules in current products."
+  ],
+  "evidence": [
+    {
+      "source_id": "valuatum-corporate",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "creditreports-dk",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    }
+  ],
+  "known_realizations": [
+    {
+      "product": "Valuatum Credit Risk Platform",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "CreditReports.dk",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    }
+  ],
+  "commercialization": {
+    "independently_sellable": "yes",
+    "notes": "Commercial packaging is illustrative; existing Valuatum pricing and product boundaries are not inferred."
+  },
+  "composability": [
+    {
+      "capability_id": "retrieve-financial-profile",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    },
+    {
+      "capability_id": "assess-company-credit-risk",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    }
+  ],
+  "statement_provenance": [
+    {
+      "statement": "Compare selected companies across common financial or risk dimensions.",
+      "semantic_class": "capability purpose",
+      "evidence_status": "reasonable inference",
+      "source": "valuatum-corporate, creditreports-dk"
+    },
+    {
+      "statement": "A normalized comparison and summary of material differences is returned.",
+      "semantic_class": "meaningful outcome",
+      "evidence_status": "reasonable inference",
+      "source": "valuatum-corporate, creditreports-dk"
+    }
+  ],
+  "decision_log": [
+    "MLE check: Compare Companies is independently understandable, invokable, and has a determinable outcome.",
+    "It remains separate from adjacent capabilities because those abilities can succeed or fail independently.",
+    "Technical surfaces are documented as realizations, not treated as the capability itself."
+  ]
+}

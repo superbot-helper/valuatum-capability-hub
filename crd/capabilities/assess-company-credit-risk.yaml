@@ -1,0 +1,154 @@
+{
+  "id": "assess-company-credit-risk",
+  "name": "Assess Company Credit Risk",
+  "status": "observed",
+  "confidence": "high",
+  "definition": "Produce a company-specific credit-risk classification and supporting indicators.",
+  "purpose": {
+    "user_problem": "Support decisions involving a company counterparty by characterizing its credit risk.",
+    "rationale": "Extracted from publicly observable Valuatum product outcomes."
+  },
+  "meaningful_outcome": "A company-specific risk classification and principal indicators are available for review.",
+  "consumers": [
+    {
+      "persona": "credit decision-maker",
+      "outcome": "A company-specific risk classification and principal indicators are available for review."
+    },
+    {
+      "persona": "procurement manager",
+      "outcome": "A company-specific risk classification and principal indicators are available for review."
+    }
+  ],
+  "boundaries": {
+    "in_scope": [
+      "credit score or rating where evidenced",
+      "bankruptcy-risk or credit-limit indicators where evidenced"
+    ],
+    "out_of_scope": [
+      "binding lending approval",
+      "undisclosed proprietary formula"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "company identifier",
+      "meaning": "Input required to assess the credit risk of a selected company.",
+      "required": true
+    },
+    {
+      "name": "available financial and company context",
+      "meaning": "Input required to assess the credit risk of a selected company.",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "risk classification and indicators",
+      "meaning": "A company-specific risk classification and principal indicators are available for review."
+    }
+  ],
+  "interaction_contracts": [
+    {
+      "id": "assess-company-credit-risk",
+      "actor": "credit decision-maker, application, or agent",
+      "command": "Assess the credit risk of a selected company.",
+      "current_state": "The target company or request context is available; otherwise the request fails in a controlled way.",
+      "policies_invariants": [
+        "Return only information supported by available inputs and evidence.",
+        "The prototype realization must label every analytical output as synthetic."
+      ],
+      "transition": "No authoritative external company state changes; a result artifact is produced.",
+      "result": "A company-specific risk classification and principal indicators are available for review.",
+      "effects": [
+        "A response or report may be returned to the caller."
+      ],
+      "unknowns": [
+        "Exact model inputs, calibration, thresholds, and override policies."
+      ]
+    }
+  ],
+  "rules_invariants": [
+    "Do not present unavailable or inferred information as observed fact.",
+    "A realization must preserve the capability purpose independently of its UI, API, MCP, or report surface."
+  ],
+  "recommended_defaults": [
+    "Return relevant uncertainty with the result.",
+    "Prefer concise explanations linked to the supporting data."
+  ],
+  "unknowns": [
+    "Exact model inputs, calibration, thresholds, and override policies."
+  ],
+  "evidence": [
+    {
+      "source_id": "valuatum-corporate",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "luottoriskit",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    },
+    {
+      "source_id": "creditreports-dk",
+      "access_date": "2026-08-26",
+      "evidence_type": "explicit_fact",
+      "note": "See crd/evidence/sources.yaml for the public-source evidence summary."
+    }
+  ],
+  "known_realizations": [
+    {
+      "product": "Luottoriskit.fi",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "CreditReports.dk",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    },
+    {
+      "product": "Valuatum Credit Risk Platform",
+      "surface": "web, report, API, or unknown",
+      "execution_mode": "software-primary",
+      "note": "Publicly observable realization; internal implementation is unknown."
+    }
+  ],
+  "commercialization": {
+    "independently_sellable": "yes",
+    "notes": "Commercial packaging is illustrative; existing Valuatum pricing and product boundaries are not inferred."
+  },
+  "composability": [
+    {
+      "capability_id": "explain-credit-risk",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    },
+    {
+      "capability_id": "generate-credit-report",
+      "resulting_value": "Can contribute its independently meaningful outcome to a broader workflow without losing its own boundary."
+    }
+  ],
+  "statement_provenance": [
+    {
+      "statement": "Produce a company-specific credit-risk classification and supporting indicators.",
+      "semantic_class": "capability purpose",
+      "evidence_status": "reasonable inference",
+      "source": "valuatum-corporate, luottoriskit, creditreports-dk"
+    },
+    {
+      "statement": "A company-specific risk classification and principal indicators are available for review.",
+      "semantic_class": "meaningful outcome",
+      "evidence_status": "reasonable inference",
+      "source": "valuatum-corporate, luottoriskit, creditreports-dk"
+    }
+  ],
+  "decision_log": [
+    "MLE check: Assess Company Credit Risk is independently understandable, invokable, and has a determinable outcome.",
+    "It remains separate from adjacent capabilities because those abilities can succeed or fail independently.",
+    "Technical surfaces are documented as realizations, not treated as the capability itself."
+  ]
+}

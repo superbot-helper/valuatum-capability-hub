@@ -1,0 +1,10 @@
+.git
+.github
+site
+docs
+crd
+scripts
+mcp/node_modules
+mcp/dist
+**/.DS_Store
+
