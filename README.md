@@ -29,4 +29,8 @@ The MCP service defaults to `http://localhost:8080`; the generated site defaults
 
 Cloud Run MCP service: `https://vf-capability-tuasvqm3oa-lz.a.run.app/mcp`
 
-Public GitHub repository and Pages publication remain pending GitHub re-authentication. See `docs/assumptions.md` for limitations.
+Public repository: `https://github.com/valto/valuatum-capability-hub`
+
+Public capability site: `https://valto.github.io/valuatum-capability-hub/`
+
+See `docs/assumptions.md` for limitations.

@@ -1,8 +1,8 @@
 # Submission record
 
 - Working repository: this Storage-wiki directory
-- Intended public repository: `https://github.com/valto/valuatum-capability-hub`
-- Intended public site: `https://valto.github.io/valuatum-capability-hub/`
+- Public repository: `https://github.com/valto/valuatum-capability-hub`
+- Public site: `https://valto.github.io/valuatum-capability-hub/`
 - Cloud Run MCP endpoint: `https://vf-capability-tuasvqm3oa-lz.a.run.app/mcp`
 - Cloud project and service: `vf-capability`
 - Region: `europe-north1`
@@ -15,4 +15,4 @@
 - AI usage: Codex used for public-source research, CRD extraction, synthetic data design, TypeScript implementation, static-site generation, tests, and release verification.
 - Important prompt: the owner-provided `Valuatum_Task1_Agent_Implementation_Spec.md`.
 - Rejected direction: build only one end-user Luottoriskit.fi feature; it provided less reuse and strategic leverage than a documented capability layer.
-- Pending: GitHub authentication, repository creation, Pages workflow run, and final public-site smoke test.
+- Deployment state: GitHub repository, GitHub Pages site, Cloud Run MCP endpoint, public-site smoke tests, MCP initialization, tool discovery, CORS checks, and composed-demo checks completed successfully.
