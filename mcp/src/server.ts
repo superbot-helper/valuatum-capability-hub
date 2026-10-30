@@ -10,12 +10,12 @@ app.use(express.json({limit:'64kb'}));
 const allowed=(process.env.ALLOWED_ORIGINS||'http://localhost:4173').split(',').map(v=>v.trim());
 app.use((req,res,next)=>{const origin=req.headers.origin;if(origin&&!allowed.includes(origin)) return res.status(403).json({error:'Origin not allowed'});if(origin){res.setHeader('Access-Control-Allow-Origin',origin);res.setHeader('Vary','Origin')}if(req.method==='OPTIONS'){res.setHeader('Access-Control-Allow-Methods','GET,POST,OPTIONS');res.setHeader('Access-Control-Allow-Headers','content-type,mcp-protocol-version');return res.sendStatus(204)}next()});
 
-app.get('/healthz',(_req,res)=>res.json({status:'ok',service:'vf-capability',mode:'prototype',sdk:'@modelcontextprotocol/sdk 1.30.0',transportProfile:process.env.MCP_PROTOCOL_TARGET||'2026-07-28',sdkNegotiatedRevision:'2025-11-25',notice}));
+app.get('/healthz',(_req,res)=>res.json({status:'ok',service:'vf-capability',mode:'prototype',sdk:'@modelcontextprotocol/sdk 1.32.2',transportProfile:process.env.MCP_PROTOCOL_TARGET||'2026-07-28',sdkNegotiatedRevision:'2025-11-25',notice}));
 app.get('/api/companies',(_req,res)=>res.json(actions.search_company({query:''})));
 app.post('/api/:action',(req,res)=>{try{const fn=(actions as Record<string,(x:any)=>unknown>)[req.params.action];if(!fn)return res.status(404).json({error:'Unknown action'});res.json(fn(req.body||{}))}catch(error){res.status(400).json({error:error instanceof Error?error.message:'Invalid request',notice})}});
 
 function createMcpServer(){
-  const server=new McpServer({name:'vf-capability',version:'0.1.0'});
+  const server=new McpServer({name:'vf-capability',version:'0.1.0'},{maxToolInputElements:10000});
   const result=(value:unknown)=>({content:[{type:'text' as const,text:JSON.stringify(value,null,2)}],structuredContent:value as Record<string,unknown>});
   server.registerTool('search_company',{description:'Resolve a name or synthetic identifier to a mock company entity. CRDs: find-company, retrieve-company-profile.',inputSchema:{query:z.string().min(1)}},async input=>result(actions.search_company(input)));
   server.registerTool('get_financial_profile',{description:'Return synthetic period-labelled financial context. CRD: retrieve-financial-profile.',inputSchema:{company_id:z.string(),period:z.string().optional()}},async input=>result(actions.get_financial_profile(input)));
